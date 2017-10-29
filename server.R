@@ -46,8 +46,9 @@ shinyServer(function(input, output) {
     optim_method <- "bobyqa"
 
     out_opt<- c(100 , 0.001 , 100) #c(n_out , tollerance, max_iteration)
- 
     
+    com_oc<-TRUE
+    fence<-FALSE
     check_total_similarity <- TRUE
     show_iter <- TRUE
     par_opt<-c(1,0) ## c(num_threads, kind of parallelization)

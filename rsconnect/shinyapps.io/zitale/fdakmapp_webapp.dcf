@@ -1,0 +1,12 @@
+name: fdakmapp_webapp
+title: fdakmapp_webapp
+username:
+account: zitale
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 230293
+bundleId: 1050771
+url: https://zitale.shinyapps.io/fdakmapp_webapp/
+when: 1509301471.82145
+asMultiple: FALSE
+asStatic: FALSE

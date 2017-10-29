@@ -73,7 +73,7 @@ print_result<-function(Result){
 
 print_warping<-function(r){
   
-  
+  n.obs<-dim(r$y)[1]
   #colori
   myrainbow <- c("red", "blue", "green3", "orange", "grey", "yellow")
   colori.dopo <- rainbow(length(unique(r$labels)))
@@ -90,9 +90,9 @@ print_warping<-function(r){
     colours.warping[which(r$labels == k)] <- myrainbow[k]
   }
   
-    plot(t(r$x[1, ]), t(r$x.final[1, ]), xlim = c(min(x, na.rm = TRUE),
-        max(x, na.rm = TRUE)), ylim = c(min(x, na.rm = TRUE),
-        max(x, na.rm = TRUE)), type = "l", lwd = 1, col = colours.warping[1],
+    plot(t(r$x[1, ]), t(r$x.final[1, ]), xlim = c(min(r$x, na.rm = TRUE),
+        max(r$x, na.rm = TRUE)), ylim = c(min(r$x, na.rm = TRUE),
+        max(r$x, na.rm = TRUE)), type = "l", lwd = 1, col = colours.warping[1],
         xlab = "x", ylab = "y", asp = 1)
   
       for (i in 2:n.obs) {
@@ -105,8 +105,8 @@ print_warping<-function(r){
       title33 <- c("Warping Functions")
       title3def <- c(title3, title33)
       title(main = title3def)
-      abline(v = min(x))
-      abline(v = max(x))
+      abline(v = min(r$x))
+      abline(v = max(r$x))
 
 }
 
