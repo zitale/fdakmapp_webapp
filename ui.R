@@ -31,11 +31,8 @@ shinyUI(fluidPage(theme= shinytheme("cerulean"),
                       ),
                       
                   
-                      sliderInput("n_cluster",
-                                  "Number of clusters:",
-                                  min = 1,
-                                  max = 10,
-                                  value = 3),
+                      numericInput("n_cluster",
+                                  "Number of clusters: \ (default 2)",2),
                       
                       #seeds
 
@@ -106,12 +103,15 @@ shinyUI(fluidPage(theme= shinytheme("cerulean"),
                     
                     # Show a plot of the generated distribution
                     mainPanel(
-                      # fluidRow(
-                      # column(12,plotOutput("alignPlot"))
-                      # ),
-                      # fluidRow(
-                      #   column(12,plotOutput("originPlot"))
-                      # )
+                      fluidRow(
+                      column(12,plotOutput("plot",width = "100%", height = "600px"))
+                      ),
+                      fluidRow(
+                        column(12,plotOutput("plot1",width = "100%", height = "600px"))
+                      ),
+                      fluidRow(
+                        column(12,plotOutput("plot2",width = "100%", height = "600px"))
+                      )
                     ) ## FINE MAIN PANNEL
                     
                   )## FINE SIDEBAR LAYOUT
