@@ -36,7 +36,7 @@ shinyUI(fluidPage(theme= shinytheme("cerulean"),
                       
                       #seeds
 
-                      textInput('vec', 'Enter seeds(comma delimited). If empty random seeds.'),
+                      textInput('seeds', 'Enter seeds(comma delimited). If empty random seeds.'),
                       
                       radioButtons(inputId="center_method", label="Select center method",
                                    choices=c("medoid","mean")),
@@ -97,20 +97,20 @@ shinyUI(fluidPage(theme= shinytheme("cerulean"),
                       radioButtons(inputId="similarity_method", label="Choose dissimilarity measure:",
                                    choices=c("pearson","l2")),
                       
-                      checkboxInput("total_sim", "Check total similarity", TRUE),
-                      checkboxInput("fence", "Fence Check", FALSE)
+                      checkboxInput("total_sim", "Check total similarity", TRUE)
+                    
                     ),
                     
                     # Show a plot of the generated distribution
                     mainPanel(
+                      
                       fluidRow(
-                      column(12,plotOutput("plot",width = "100%", height = "600px"))
+                      column(6,plotOutput(outputId="plotoriginal")),
+                      column(6,plotOutput(outputId="plotresult"))
                       ),
                       fluidRow(
-                        column(12,plotOutput("plot1",width = "100%", height = "600px"))
-                      ),
-                      fluidRow(
-                        column(12,plotOutput("plot2",width = "100%", height = "600px"))
+                        column(6,plotOutput(outputId="plotwarping")),
+                        column(6,plotOutput(outputId="plotsim"))
                       )
                     ) ## FINE MAIN PANNEL
                     
