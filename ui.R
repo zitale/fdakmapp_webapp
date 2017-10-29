@@ -12,10 +12,6 @@ shinyUI(fluidPage(theme= shinytheme("cerulean"),
                   sidebarLayout(
                     
                     sidebarPanel(
-                      
-                      ## RUN BUTTON
-                      actionButton("run", "Run"),
-                      
                       # Input: Selector for choosing dataset
                       selectInput(inputId = "dataset",
                                   label = "Choose a dataset:",
@@ -97,8 +93,11 @@ shinyUI(fluidPage(theme= shinytheme("cerulean"),
                       radioButtons(inputId="similarity_method", label="Choose dissimilarity measure:",
                                    choices=c("pearson","l2")),
                       
-                      checkboxInput("total_sim", "Check total similarity", TRUE)
-                    
+                      checkboxInput("total_sim", "Check total similarity", TRUE),
+                      
+                      ## RUN BUTTON
+                      actionButton("run", "Run", icon("paper-plane"), 
+                                   style="color:  #2e6da4; background-color: #337ab7; border-color: #2e6da4")
                     ),
                     
                     # Show a plot of the generated distribution
